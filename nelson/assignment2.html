@@ -1,0 +1,36 @@
+<!-- 1. Image Tag <img>The <img> tag embeds a 
+ visual image. It is a self-closing tag, 
+ meaning it does not need a closing </img>
+ tag.
+ src: Specifies the path to your image(its an attribute)
+   file.
+alt: Provides descriptive backup text ,if the image fails to
+ load (crucial for accessibility).-->
+ <img src="full stack development/river.jpg" 
+ alt="a man on a boat in a river " 
+ width="600" height="200">
+<!--2. Audio Tag <audio>The <audio> tag embeds sound content like music or podcasts. 
+    controls: Adds play, pause, and volume buttons so users can 
+    interact with the audio.<source>: Tells the browser where the
+    file is and its format (e.g., MP3, OGG, WAV).Fallback text:
+    The text inside the tag only shows up if a user's browser is
+    too old to support modern HTML5 audio.-->
+<audio controls>
+  <source src="podcast.mp3" type="audio/mpeg">
+  <source src="podcast.ogg" type="audio/ogg">
+</audio>
+<!--3. The <video> tag embeds video clips or movie streams. Like the audio tag,
+    it uses nested <source> tags to provide different file formats for
+     maximum browser compatibility.controls: Gives the user video playback 
+     controls.poster: Displays a placeholder image before the video plays.width 
+     / height: Sets the display dimensions. -->
+<video width="640" height="360" controls poster="thumbnail.jpg">
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.webm" type="video/webm">
+</video>
+<!--4. The <iframe> tag embeds an entire external website or document inside a rectangular 
+     YouTube videos.src: The URL of the external web page you want to display.
+     <loading="lazy": Optimizes page speed by only loading the frame when a user scrolls near it.-->
+<iframe src="https://wikipedia.org" width="100%" 
+height="500" title="Wikipedia Homepage" loading="lazy"></iframe>
+
