@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    1. The image tag, <img> is used to display an image on a web page. It is an empty tag
+    -->
+    <img src="image.jpg" alt="image description">
+    <!-- src(source) specifies the location or path of the image -->
+     <img src="cat.jpg">
+     <!-- alt(alternative text) provides a description of the image. It is displayed when the image cannot be found or the internet connection is low -->
+      <img src="cat.jpg" alt="A white cat on a table">
+      <!-- width sets the width of the image -->
+       <img src="cat.jpg" width="250">
+       <!-- height sets the height of the image -->
+        <img src="cat.jpg" height="200">
+        
+        <!-- 
+        2. The <audio> tag is used to play audio files such as music or sound recordings on a web page
+        -->
+            <audio controls>
+                <source src="music.mp3" type="audio/mpeg">
+            </audio>
+            <!--
+             <audio> creates the audio player
+                <source> tells the browser where the audio file is located
+                src is the path to the audio file
+                type tells the browser the file format
+
+                The control attribute displays the audio player controls e.g ▶️play, ⏸️Pause,🔊Volume
+             -->
+             <audio controls>
+                 <source src="song.mp3" type="audio/mpeg">
+             </audio>
+             <!-- If there are no controls, users cannot play it -->
+        <!-- 
+        3. The <video> tag is used to display and play videos on a web page.
+        -->
+        <video controls>
+             <source src="video.mp4" type="video/mp4">
+         </video>
+     <!-- The <video> creates the video player. -->
+     <!-- The <source> specifies the video file. -->
+     <!-- src tells the browser where the video is located. -->
+     <!-- type tells the browser the file format. -->
+
+    <!-- 
+     The controls attribute displays the video's controls, such as:
+     ▶️ Play
+     ⏸️ Pause
+     🔊 Volume
+     ⛶ Full screen
+     ⏱️ Progress bar
+     -->
+     <video controls>
+         <source src="movie.mp4" type="video/mp4">
+     </video>
+     <!-- Without controls, users won't be able to play or pause the video. -->
+
+     <!-- 
+     Width and Height
+     You can control the size of the video.
+     -->
+     <video width="500" height="300" controls>
+         <source src="movie.mp4" type="video/mp4">
+     </video>
+     
+     <!-- If only the width is set, the browser adjusts the height automatically: -->
+     <video width="500" controls>
+         <source src="movie.mp4" type="video/mp4">
+     </video>
+    
+     <!--
+      The poster attribute displays an image before the video starts playing.
+     -->
+     <video width="500" controls poster="thumbnail.jpg">
+         <source src="movie.mp4" type="video/mp4">
+     </video>
+     <!-- 
+     thumbnail.jpg is the image shown before playback.
+     movie.mp4 is the video.
+     -->
+
+     <!-- 
+     4. The <iframe> (Inline Frame) tag is used to embed another webpage or online content inside your webpage.
+        It can display other websites, youtube videos, google maps, PDF documents (in some browsers)
+     -->
+      <iframe src="https://example.com"></iframe>
+     <!--
+      iframe creates the frame.
+      src specifies the webpage or content to display.
+      width and height controls the size of the iframe.
+     -->
+     <iframe src="https://example.com"
+         width="600"
+         height="400">
+     </iframe>
+     <!--
+     width = Width of the frame.
+     height = Height of the frame.
+
+     Example 1: Embed a Website
+     -->
+     <iframe src="https://www.wikipedia.org"
+         width="700"
+         height="400">
+     </iframe>
+     <!-- This displays the Wikipedia homepage inside the webpage
+     Example 2: Embed a YouTube Video
+     -->
+     <iframe
+         width="560"
+         height="315"
+         src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+         title="YouTube video"
+         allowfullscreen>
+     </iframe>
+     <!--
+     This displays a YouTube video directly on the webpage. 
+     Example 3: Embed Google Maps
+     Google Maps also provides an embed code.
+     -->
+     <iframe
+         src="https://www.google.com/maps/embed?..."
+         width="600"
+         height="450">
+     </iframe>
+     <!-- This displays a map inside your webpage. -->
+        
+</body>
+</html>
