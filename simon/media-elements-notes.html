@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Media Elements — Study Notes</title>
+</head>
+<body>
+
+    <h1>Working with Media in HTML</h1>
+
+    <!-- =====================================================
+         SECTION A: THE IMAGE ELEMENT
+         The <img> tag places a picture on the page.
+         It has no closing tag, so we call it a "self-closing"
+         or "void" element.
+    ===================================================== -->
+
+    <h2>1. Images — the &lt;img&gt; tag</h2>
+
+    <!-- Basic usage: just point to a file -->
+    <img src="banner.jpg">
+
+    <!-- src (short for "source") tells the browser exactly
+         which file to load and where to find it -->
+    <img src="puppy.jpg">
+
+    <!-- alt (short for "alternative text") is a backup description.
+         The browser shows this text if the picture fails to load,
+         and screen readers use it to describe the image to
+         visually impaired users -->
+    <img src="puppy.jpg" alt="A golden retriever puppy sitting on grass">
+
+    <!-- width fixes how wide the image appears, measured in pixels -->
+    <img src="puppy.jpg" width="300">
+
+    <!-- height fixes how tall the image appears -->
+    <img src="puppy.jpg" height="220">
+
+    <!-- Combining everything together for a properly labeled,
+         correctly sized image -->
+    <img src="puppy.jpg" alt="A golden retriever puppy sitting on grass" width="300" height="220">
+
+
+    <!-- =====================================================
+         SECTION B: THE AUDIO ELEMENT
+         <audio> lets a visitor listen to sound directly
+         on the page, without leaving it.
+    ===================================================== -->
+
+    <h2>2. Sound — the &lt;audio&gt; tag</h2>
+
+    <audio controls>
+        <source src="podcast-episode.mp3" type="audio/mpeg">
+    </audio>
+
+    <!--
+        Breaking that down:
+        - <audio> wraps around the whole player
+        - <source> points to the actual sound file
+        - src is the file path
+        - type tells the browser what kind of audio format it is,
+          so the browser knows how to handle it
+        - controls makes the play button, pause button, and
+          volume slider visible to the user
+    -->
+
+    <audio controls>
+        <source src="birthday-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Leaving out "controls" hides the player buttons entirely,
+         which means the visitor has no way to press play -->
+    <audio>
+        <source src="silent-example.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- =====================================================
+         SECTION C: THE VIDEO ELEMENT
+         <video> embeds a movie clip that can be played
+         right there in the browser window.
+    ===================================================== -->
+
+    <h2>3. Video — the &lt;video&gt; tag</h2>
+
+    <video controls>
+        <source src="tutorial-clip.mp4" type="video/mp4">
+    </video>
+
+    <!-- <video>  = builds the video player itself
+         <source> = points the player to the actual video file
+         src      = the file's location
+         type     = the video format, e.g. video/mp4 -->
+
+    <!-- controls adds on-screen buttons for:
+         ▶ play
+         ⏸ pause
+         🔊 volume
+         ⛶ fullscreen
+         ⏱ a progress/scrub bar -->
+
+    <video controls>
+        <source src="graduation-highlights.mp4" type="video/mp4">
+    </video>
+
+    <!-- Without the controls attribute the video is invisible
+         to user interaction — it exists on the page but can't
+         be started or stopped -->
+
+    <!-- You can force an exact size using width and height -->
+    <video width="480" height="270" controls>
+        <source src="graduation-highlights.mp4" type="video/mp4">
+    </video>
+
+    <!-- If you only set width, the browser scales height
+         automatically to keep the video's proportions correct -->
+    <video width="480" controls>
+        <source src="graduation-highlights.mp4" type="video/mp4">
+    </video>
+
+    <!-- poster shows a preview image before the visitor
+         presses play, similar to a cover photo -->
+    <video width="480" controls poster="cover-frame.jpg">
+        <source src="graduation-highlights.mp4" type="video/mp4">
+    </video>
+    <!-- cover-frame.jpg = the placeholder shown before playback
+         graduation-highlights.mp4 = the actual clip that plays -->
+
+
+    <!-- =====================================================
+         SECTION D: THE IFRAME ELEMENT
+         <iframe> (short for "Inline Frame") embeds an
+         entirely separate webpage inside the current one.
+    ===================================================== -->
+
+    <h2>4. Embedding other pages — the &lt;iframe&gt; tag</h2>
+
+    <!-- Useful for showing another website, a YouTube video,
+         an online map, or even a PDF, without sending the
+         visitor away from your page -->
+    <iframe src="https://www.bbc.com"></iframe>
+
+    <!-- src = the address of the page being embedded
+         width / height = control the size of the embedded frame -->
+    <iframe src="https://www.bbc.com" width="640" height="380"></iframe>
+
+    <!-- Example 1: embedding a full external website -->
+    <iframe src="https://www.nationalgeographic.com" width="700" height="420"></iframe>
+    <!-- This loads the National Geographic homepage inside a box
+         on your own page -->
+
+    <!-- Example 2: embedding a YouTube video -->
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/jNQXAC9IVRw"
+        title="Sample YouTube video"
+        allowfullscreen>
+    </iframe>
+    <!-- This plays a YouTube clip directly on the page -->
+
+    <!-- Example 3: embedding a Google Maps location -->
+    <iframe
+        src="https://www.google.com/maps/embed?..."
+        width="600"
+        height="450">
+    </iframe>
+    <!-- This shows an interactive map without leaving your site -->
+
+</body>
+</html>
