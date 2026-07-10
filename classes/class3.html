@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- External CSS : .css -->
+     <link rel="stylesheet" href="class3.css">
+    <style>
+         
+        /* CSS: Internal */
+
+        /* selector : Access elements */
+        /* tag name */
+        div{
+            color:aliceblue;
+            background: blue;
+        }
+        
+
+        /* class .class_name */
+        .demo1{
+            background: orange;
+        }
+        .demo{
+            background: orangered;
+        }
+        .demo2{
+            color:#fff;
+        }
+
+        /* id  #id_name */
+        #demo{
+            color:red;
+        }
+        .container1 span {
+            
+            background: yellow;
+        }
+        .demo, #demo, .container span{
+            font-size: 20px;
+        }
+
+        /* colors */
+        #demo{
+
+            color:blue;
+            color: rgb(34,207,8);
+            color:#000000;
+            color: rgba(167, 207, 8, 0.4);
+            color:#12345667;
+
+            /*  */
+            padding: 30px;
+            background: #d6d634;
+            background: transparent;
+            background:linear-gradient(red,#009);
+            background:conic-gradient(red,black);
+            background:radial-gradient(red,black);
+            background-image: url("../assets/pic1.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* top, left, bottom, center */
+            background-position: right;
+        }
+        #demo1{
+            /* typo : text/fonts */
+            font-size:20px;
+            font-size: 2rem;
+            font-size: small;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform:uppercase;
+            text-transform:lowercase;
+            text-transform:capitalize;
+
+            text-align: left;
+            text-align: right;
+            text-align: center;
+
+            letter-spacing: 3px;
+            word-spacing: 10px ;
+            letter-spacing: normal;
+            word-spacing: normal;
+
+            font-weight: light;
+            font-weight: bold;
+            font-weight: 100;
+            font-weight: 900;
+
+            text-decoration: underline;
+            text-decoration: line-through;
+            text-decoration: overline;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- CSS: Inline -->
+    <p style="color:red">Lorem, ipsum dolor.</p>
+    <div> Lorem, ipsum dolor.</div>
+    <div> Lorem, ipsum dolor.</div>
+
+    <section class="demo"> Lorem, ipsum dolor.</section>
+    <section class="demo demo2"> Lorem, ipsum dolor.</section>
+    <section class="demo1 demo2"> Lorem, ipsum dolor.</section>
+
+    <p id="demo">Lorem ipsum dolor sit.</p>
+    <p id="demo1">Lorem ipsum dolor sit.</p>
+
+    <section class="container1">
+        <span> Lorem, ipsum.</span>
+        <span> Lorem, ipsum.</span>
+    </section>
+    <span> Lorem, ipsum.</span>
+</body>
+</html>
