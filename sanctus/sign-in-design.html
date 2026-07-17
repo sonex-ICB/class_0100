@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(#ff88, #446a, #567a, #443b);
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            margin-top: 150px;
+        }
+        .container{
+            width: 400px;
+            height: 350px;
+        }
+        .sign-in {
+            background: lightseagreen;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 12px slategrey;
+        }
+        .sign-in p{
+            text-align: center;
+            margin-bottom: 20px;
+            color: blueviolet;
+        }
+        label{
+            display: block;
+            margin-bottom: 4px;
+            color: aquamarine;
+            font-weight: bold;
+        }
+        input{
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid green;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+        button{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background: blue;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+           &:hover{
+            transform: scale(1.05);
+            background: lightsteelblue;
+           }
+        }
+        .sign-up{
+            margin-top: 15px;
+            font-size: 13px;
+        }
+        .sign-up a{
+            color: purple;
+            font-weight: bold;
+        }
+        .line{
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .line hr{
+            flex: 1;
+        }
+        .socials button{
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+        .google{
+            background: red;
+        }
+        .facebook{
+            background: navy;
+        }
+        .twitter{
+            background: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="sign-in">
+            <label for="Email">Email</label>
+            <input type="email" placeholder="Email/Username" required name="Email"><br>
+
+            <label for="Password">Password</label>
+            <input type="password" placeholder="Password" required name="Password"><br>
+
+            <button type="submit">Sign in</button>
+            
+            <div class="line">
+                <hr>
+                    <span>Or</span>
+                <hr>
+            </div>
+
+            <div class="socials">
+                <button class="google">Sign in with Google</button><br>
+                <button class="facebook">Sign in  with Facebook</button><br>
+                <button class="twitter">Sign in with Twitter</button><br>
+            </div>
+            <p class="sign-up">
+                Don't have an accout? <a href="sign-up.html">Sign up</a>
+            </p>
+
+        </form>
+    </div>
+</body>
+</html>
