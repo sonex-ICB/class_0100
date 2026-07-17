@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .def {
+            background: orangered;
+            color: #fff;
+            padding: 30px;
+            margin: 10px 0;
+            position: static;
+        }
+
+        .absolute {
+            background: blue;
+            position: absolute;
+            bottom: 30px;
+            right: 0;
+        }
+
+        .fixed {
+            background: brown;
+            position: fixed;
+            z-index: -200;
+        }
+
+        .relative {
+            position: relative;
+            top: 30px;
+            background: rgb(164, 241, 10);
+        }
+
+        .sticky {
+            position: sticky;
+            top: 20px;
+            background: #001;
+        }
+
+        /* transition */
+        .btn {
+            background: red;
+            padding: 10px 30px;
+            border: 0;
+            border-radius: 10px;
+            transition: 1s;
+
+            &:hover {
+                transform: scale(1.05);
+                background: #000;
+            }
+        }
+
+        .card {
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px 5px #00000045;
+            overflow: hidden;
+        }
+
+        .card img {
+            display: block;
+            margin: auto;
+            transition: .5s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        .box {
+            width: 30px;
+            background: #000;
+            height: 30px;
+            transform: rotate(45deg);
+            transform: rotateX(180deg);
+            transform: rotateY(180deg);
+
+            /* translate */
+            /* translate: 100%; */
+            color: red;
+            scale: 0;
+            scale: 1;
+        }
+        .box1{
+            padding: 30px;
+            background: #000;
+            margin: 10px;
+            animation:ani_1 5s infinite;
+        }
+        @keyframes ani_1{
+            0%{ background: red;}
+            50%{background: #000;}
+            100%{background: #099;}
+        }
+        .circle{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border:5px solid #009;
+            border-top-color: #00009945;
+            animation:spinner 1s infinite linear;
+        }
+        @keyframes spinner{
+            0%{transform: rotate(0deg);}
+            100%{transform: rotate(360deg);}
+        }
+    </style>
+</head>
+
+<body>
+    <marquee behavior="" direction="">
+        <section style="display: flex; gap:20px;">
+            <div> item 1</div>
+            <div> item 2</div>
+            <div> item 3</div>
+        </section>
+    </marquee>
+    <!-- animation  -->
+     <div class="box1"> </div>
+     <div class="circle"></div>
+    <!-- transform -->
+    <div class="box"> text </div>
+    <!-- transition -->
+    <button class="btn" type="button"> Proceed </button>
+    <div class="card">
+        <img src="../assets/pic1.jpg" width="100%">
+    </div>
+
+    <!-- position  -->
+    <div class="def btn"> Lorem ipsum dolor sit amet.</div>
+    <div class="def absolute"> Lorem ipsum dolor sit amet.</div>
+    <div class="def sticky"> Lorem ipsum dolor sit amet. A </div>
+    <div class="def fixed"> Lorem ipsum dolor sit amet.</div>
+    <div class="def"> Lorem ipsum dolor sit amet.</div>
+    <div class="def relative"> Lorem ipsum dolor sit amet.</div>
+    <div class="def"> Lorem ipsum dolor sit amet.</div>
+    <div class="def"> Lorem ipsum dolor sit amet.</div>
+    <div class="def"> Lorem ipsum dolor sit amet.</div>
+    <div class="def"> Lorem ipsum dolor sit amet.</div>
+
+</body>
+
+</html>
