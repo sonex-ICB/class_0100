@@ -10,8 +10,10 @@ form{
     width: 100%;
     margin: 40px auto;
     padding: 20px;
-    overflow: auto;
-    height:100vh ;
+     @media screen  and (min-width:768px){
+         overflow: auto;
+         height:100vh ;
+    }
 }
 input, textarea,select,button{
     padding: 15px;
@@ -38,8 +40,12 @@ form button{
 }
 section{
     display: flex;
+    flex-direction: column;
     gap: 20px;
     height: 100vh;
+    @media screen  and (min-width:768px){
+            flex-direction: row;
+    }
 }
 label{
     color:#808080;
@@ -53,8 +59,13 @@ label{
     background: #009;
     color:#fff;
     text-align: center;
+    display:none;
+    @media screen  and (min-width:768px){
+          display:flex;
+    }
+
 }
-.left-panel .icon{
+.panel .icon{
     font-size: 50px;
     border:3px solid #fff;
     display:flex;
@@ -67,12 +78,18 @@ label{
     border-radius: 50%;
 
 }
-.left-panel h1{
+.panel h1{
     font-size: 60px;
 }
-.left-panel .title p{
+.panel .title p{
     font-size: 27px;
     font-weight: 100;
+}
+.end-panel .title{
+    display:block;
+     @media screen  and (min-width:768px){
+        display:none;
+    }
 }
 .left-panel ul{
     text-align: left;
