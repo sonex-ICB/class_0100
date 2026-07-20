@@ -15,6 +15,10 @@ form{
     height: 100vh;
 }
 
+h2{
+    color: #009;
+}
+
 input, button{
     padding: 10px;
     background: transparent;
