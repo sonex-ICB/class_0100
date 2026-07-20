@@ -6,13 +6,18 @@
 }
 
 form{
-    background: lightcyan;
+    background: #fff;
+    box-shadow: 0 0 13px #80808045;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 20px;
-    overflow: auto;
-    height: 100vh;
+    width: 90%;
+    padding: 50px 20px;
+    max-width: 500px;
+    border-radius: 12px;
+    
+}
+body{
+    background: lightcyan;
 }
 
 h2{
@@ -20,7 +25,7 @@ h2{
 }
 
 input, button{
-    padding: 10px;
+    padding: 14px;
     background: transparent;
     border: 1px solid #ccc;
     box-shadow: 0 5px 6px 0 #80808304;
@@ -28,6 +33,7 @@ input, button{
     outline: 0;
     font-weight: bold;
     color: #808080;
+    margin: 10px 0;
 }
 
 form button{
@@ -38,8 +44,13 @@ form button{
     transition: 0.2s;
     &:hover{
         transform: scale(1.02);
-        background: lightblue;
     }
+}
+div a{
+    font-weight: bold;
+}
+a{
+    text-decoration:none
 }
 
 .line{
@@ -56,7 +67,14 @@ form button{
 .socials{
     margin-top: 20px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:12px;
+
+}
+.socials button{
+    width: fit-content;
+    padding:20px 40px;
 }
 
 .phone_number{
@@ -71,6 +89,7 @@ form button{
 .twitter{
     background: black;
 }
+
 
 
 .panel{
