@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPMONEY - Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-59mflmEHdfG3+iNat6Jg0HZPgYcAhZ7q0VO+q50sfkQDMBpoaSJfjJU2HuH5aBeMZyTwfKB54G8hratLP3Jsow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0d1b3e 0%, #16305f 55%, #1e4bb8 100%);
+            padding: 24px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+            background: blue;
+            border: white;
+            border-radius: 16px;
+            padding: clamp(24px, 5vw, 40px);
+            color: #fff;
+            
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .title .icon {
+            width: 46px;
+            height: 46px;
+            border: 1.5px solid #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 18px;
+        }
+
+        .title h1 {
+            font-size: clamp(20px, 5vw, 26px);
+            letter-spacing: 1px;
+        }
+
+        .title .bank-tag {
+            font-size: 12px;
+            opacity: 0.85;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+
+        .title h2 {
+            font-size: clamp(18px, 4.5vw, 22px);
+            margin-top: 4px;
+        }
+
+        .title .subtitle {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 13px;
+            margin-bottom: 6px;
+            margin-top: 14px;
+        }
+
+        label:first-of-type {
+            margin-top: 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            background: #fff;
+            color: #222;
+        }
+
+        input::placeholder {
+            color: #888;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+        }
+
+        /* ---- CSS-only password show/hide (checkbox hack) ---- */
+        .password-wrapper {
+            position: relative;
+        }
+
+        .toggle-checkbox {
+            display: none;
+        }
+
+        .pw-hidden,
+        .pw-visible {
+            width: 100%;
+            padding: 12px 42px 12px 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            background: #fff;
+            color: #222;
+        }
+
+        .pw-visible {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .toggle-checkbox:checked ~ .pw-hidden {
+            display: none;
+        }
+
+        .toggle-checkbox:checked ~ .pw-visible {
+            display: block;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #888;
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle-password:hover {
+            color: #444;
+        }
+
+        .toggle-password svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ---- end password toggle ---- */
+
+        .options-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin: 16px 0 20px;
+            font-size: 13px;
+        }
+
+        .options-row label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .options-row a {
+            color: #cfe0ff;
+            text-decoration: none;
+        }
+
+        .options-row a:hover {
+            text-decoration: underline;
+        }
+
+        .signin-btn {
+            width: 100%;
+            padding: 13px;
+            background: #14213d;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s ease, transform 0.1s ease;
+        }
+
+        .signin-btn:hover {
+            opacity: 0.9;
+        }
+
+        .signin-btn:active {
+            transform: scale(0.98);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.85;
+            margin: 20px 0 14px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .divider span {
+            padding: 0 10px;
+        }
+
+        .social-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .social-btn {
+            flex: 1 1 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 8px;
+            border: none;
+            border-radius: 8px;
+            background: #fff;
+            color: #333;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.1s ease;
+            white-space: nowrap;
+        }
+
+        .social-btn:hover {
+            background:black;
+        }
+
+        .social-btn:active {
+            transform: scale(0.97);
+        }
+
+        .social-btn.google i { color: #DB4437; }
+        .social-btn.facebook i { color: #1877F2; }
+        .social-btn.twitter i { color: #000000; }
+
+        .register-text {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+
+        .register-text a {
+            color: #fff;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* ---- responsive breakpoints ---- */
+        @media (max-width: 480px) {
+            .card {
+                padding: 22px 18px;
+                border-radius: 12px;
+            }
+
+            .social-buttons {
+                flex-direction: column;
+            }
+
+            .social-btn {
+                flex: 1 1 auto;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .card {
+                max-width: 420px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .card {
+                max-width: 440px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="title">
+            <div class="icon"><i class="ri-building-fill"></i></div>
+            <h1>UPMONEY</h1>
+            <p class="bank-tag">MICRO FINANCE BANK</p>
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Sign into your account</p>
+        </div>
+
+        <form action="#" method="POST">
+            <label for="identifier">Email or Username</label>
+            <input type="text" id="identifier" name="identifier" placeholder="Email or Username">
+
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+                <input type="checkbox" id="togglePassword" class="toggle-checkbox" autocomplete="off">
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="pw-hidden"
+                    placeholder="Password"
+                >
+
+                <input
+                    type="text"
+                    class="pw-visible"
+                    placeholder="Password"
+                    tabindex="-1"
+                >
+
+                <label for="togglePassword" class="toggle-password" aria-label="Toggle password visibility">
+                    <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </label>
+            </div>
+
+            <div class="options-row">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="signin-btn">Sign in</button>
+
+            <div class="divider"><span>login with</span></div>
+
+            <div class="social-buttons">
+                <button type="button" class="social-btn google">
+                    <i class="fa-brands fa-google"></i> Google
+                </button>
+                <button type="button" class="social-btn facebook">
+                    <i class="fa-brands fa-facebook-f"></i> Facebook
+                </button>
+                <button type="button" class="social-btn twitter">
+                    <i class="fa-brands fa-x-twitter"></i> Twitter
+                </button>
+            </div>
+
+            <p class="register-text">Don't have an account? <a href="signup.html">Register now!</a></p>
+        </form>
+    </div>
+
+</body>
+</html>
