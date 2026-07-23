@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,21 +15,16 @@
             background: yellow;
             margin-top: 30px;
         }
-         .btn.btn-dark.btn-sm{
-            border-radius: 10px;
-            width: 25%;
-            max-width: 450px;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            margin: 20px;
-        } 
+         /* .btn.btn-dark.btn-sm{
+            width: fit-content;
+            margin: 20px auto;
+        }  */
        
     </style>
 </head>
 <body>
     <div class="container justify-content-center d-flex align-items">
-        <div class="card shadow p-4 border border-secondary">
+        <div class="card shadow p-4 border  border-light border-5">
             <img src="shoe.jpg" class="shoe-img mx-auto my-auto w-25 h-25">
             <div class="text-center mt-3 stars">
                 <i class="ri-star-fill"></i>
@@ -45,7 +40,9 @@
                 <h5>Colors: Red,White,Black</h5>
                 <h5>Pick up Location: Wuse Zone 3</h5>
             </div>
-            <button type="button" class="btn btn-dark btn-sm mx-auto">Order now</button>
+            <div class="text-center py-4">
+                <button type="button" class="btn btn-dark btn-sm px-5 rounded-5">Order now</button>
+            </div>
         </div>
     </div>
     
