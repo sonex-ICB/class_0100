@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Card</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9e400;
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 340px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px 22px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);    
+    text-align: center;
+  }
+
+  .card img {
+    width: 150px;
+    padding: 10px;
+    margin-bottom: 14px;
+    &:hover{
+    animation: spin 4s linear infinite;
+
+    }
+  }
+
+
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .stars {
+    color: #f5a623;
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .details {
+    background: #0b0101;
+    border-radius: 10px;
+    padding: 18px 20px;
+    text-align: left;
+    margin-bottom: 22px;
+  }
+
+  .details p{
+    font-size: 14px;
+    font-weight: bold;
+    color: #de7f7fad;
+    margin-bottom: 8px;
+  }
+
+  .order-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 14px;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+  .order-btn:hover {
+    background: blue;
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="Sneakers.jpeg" alt="Sneaker">
+
+    <div class="stars">★★★★</div>
+
+    <div class="details">
+      <p>Best Sneakers</p>
+      <p class="price">Price: $1,000</p>
+      <p>Colors : Red, White, Black</p>
+      <p>Pick Up Location: Area 2</p>
+    </div>
+
+    <button class="order-btn">ORDER NOW</button>
+  </div>
+
+</body>
+</html>
