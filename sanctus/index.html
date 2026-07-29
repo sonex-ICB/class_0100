@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-image: url(banner-bg.png);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .icon {
+
+            position: -webkit-sticky;
+        }
+
+        .menu {
+            background: transparent;
+            border: transparent
+        }
+
+        .account {
+            background: transparent;
+            border: transparent;
+            margin-left: 75%;
+        }
+
+        .cart {
+            background: transparent;
+            border: transparent;
+        }
+
+        .support {
+            background: transparent;
+            border: transparent;
+        }
+
+        .bar{
+            background: black;
+            margin-top: 30px;
+        }
+        .sellers {
+            background: black;
+        }
+
+        .discount {
+            background: black;
+        }
+
+
+        .trending {
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icon d-flex gap-4">
+        <button type="button" class="menu text-white"> <i class="ri-menu-line fs-3"></i></button>
+        <button type="button" class="account text-white"><i class="ri-account-circle-fill fs-3"></i></button>
+        <button type="button" class="cart text-white"><i class="ri-shopping-cart-2-fill fs-3"></i></button>
+        <button type="button" class="support text-white"><i class="ri-customer-service-fill fs-3"></i></button>
+    </div>
+
+    <div class="bar bar-black">
+        <div class="button d-flex justify-content-center w-auto fw-bold">
+            <button type="button" class="btn border border-black text-warning">Best Sellers</button>
+            <button type="button" class="btn border border-black text-warning">Discount</button>
+            <button type="button" class="btn border border-black text-warning">Trending</button>
+        </div>
+    </div>
+
+    <div class="container-fluid my-5">
+        <div class="d-flex justify-content-center align-items-center">
+            <h2 class="fw-bold text-black">
+                <i>Gloria Trends</i>
+            </h2>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="row d-flex justify-content-center text-center">
+            <div class="col-12 col-md-4 my-2 text-white">
+                <h1 class="get-started fw-bold">
+                    GET STARTED WITH OUR BEST DEALS
+                </h1>
+                <p class="fs-5 my-3 d-flex justify-content-center">
+                    <i>Your favourite shopping experience.</i>
+                </p>    
+                <div class="shopping d-flex justify-content-center my-5">
+                <button type="button" class="btn btn-sm bg-black border border-black text-success rounded-4 text-fs-1  p-2">
+                    GO SHOPPING
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h2 class="text-center text-white my-3">
+            MEN AND WOMEN FASHION COLLECTON
+        </h2>
+
+        <div class="container-product d-flex align-items-center">
+        <div class="row g-4">
+            <div class="col-12 col-md-4 col-lg-3 my-3">
+                <div class="card border-0 shadow py-3">
+                    <img src="shoe.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Running Shoes</h5>
+                        <p>$80</p>
+                        <button type="button" class="btn btn-warning  position-absolute bottom-0 start-50 mb-3 translate-middle-x w-2">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 col-lg-3 my-3">
+                <div class="card border-0 shadow py-3">
+                    <img src="hoffman_shirt.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Unisex shirt</h5>
+                        <p>$30</p>
+                        <button type="button" class="btn btn-warning  position-absolute bottom-0 start-50 mb-3 translate-middle-x w-2">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div><div class="col-12 col-md-4 col-lg-3 my-3">
+                <div class="card border-0 shadow py-3">
+                    <img src="laptop.avif" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Laptop</h5>
+                        <p>$200</p>
+                        <button type="button" class="btn btn-warning  position-absolute bottom-0 start-50 mb-3 translate-middle-x w-2">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4  col-lg-3 my-3">
+                <div class="card border-0 shadow py-3">
+                    <img src="leather_bag.avif" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Leather Bag</h5>
+                        <p>$65</p>
+                        <button type="button" class="btn btn-warning position-absolute bottom-0 start-50 mb-3 translate-middle-x w-2">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-3">
+        <h2 class="gloria d-flex justify-content-center"><i>Gloria Trends</i></h2>
+
+        <div class="cont d-flex">
+        <div class="row ">
+            <strong><i class="links text-success">Quick Links</i></strong>
+            <a class="home text-white" href="">Home</a>
+            <a class="about text-white" href="">About</a>
+            <a class="contact text-white" href="">Contact</a>
+            <a class="terms text-white" href="">Terms</a>
+            <a class="privacy text-white" href="">Privacy</a>
+        </div>
+
+        <div class="row mx-auto">
+            <strong><i class="products text-success">Products</i></strong>
+            <a class="deals text-white" href="">Best Deals</a>
+            <a class="sales text-white" href="">Discount Sales</a>
+            <a class="small-pay text-white" href="">Pay-Small-Small</a>
+            <a class="bulk text-white" href="">Bulk And Combo Deals</a>
+        </div>
+
+        <div class="row ">
+            <strong><i class="products text-success">Products</i></strong>
+            <a class="fashion text-white" href="">Fashion</a>
+            <a class="elect text-white" href="">Eletronics</a>
+            <a class="health text-white" href="">Health/Medical Equipment</a>
+            <a class="desktops text-white" href="">Laptops And Desktops</a>
+            <a class="tabs text-white" href="">Phones And Tablets</a>
+            <a class="accesseries text-white" href="">Mobile Accesseries</a>
+            <a class="education text-white" href="">Education</a>
+            <a class="office text-white" href="">Office Equipment</a>
+        </div>
+
+        <div class="row mx-auto">
+            <strong><i class="products text-success">Products</i></strong>
+            <a class="reseller text-white" href="">Reseller Deals</a>
+            <a class="career text-white" href="">Career</a>
+            <a class="deliveries text-white" href="">Deliveries</a>
+            <a class="pick-up text-white" href="">Pick Up Stations</a>
+        </div>
+        </div>
+
+        <div class="row mx-auto my-auto">
+            <strong><i class="reach-out text-success">Contact</i></strong>
+            <a class="call text-white" href="">08034575388</a>
+            <a class="email text-white" href="">Email</a>
+        </div>
+
+
+        <p class="cop cop-sm my-5 d-flex justify-content-center">&copy; 2026 Gloria Trends. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
