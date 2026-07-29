@@ -1,1 +1,26 @@
-<script src="class1.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="d"></div>
+    <button id="btn"> click</button>
+</body>
+<script>
+    lk = document.createElement('link')
+    lk.rel="stylesheet"
+    color_mode = ''
+    lk.href= color_mode == 'dark' ? 'css.css' :'css1.css'
+    document.querySelector('body').append(lk)
+    document.querySelector('#btn').addEventListener('click',()=>{
+        color_mode  = color_mode  == 'dark' ? "" : 'dark'
+        lk.href = color_mode == 'dark' ? 'css.css' : 'css1.css'
+        // alert(color_mode)
+    })
+    
+</script>
+</html>
