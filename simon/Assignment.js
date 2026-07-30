@@ -17,9 +17,8 @@
 
 //3
 function checkVotingStatus(age) {
-  // Returns "canvote" if age is above 18, otherwise "cannot vote"
   return age > 18 ? "canvote" : "cannot vote";
 }
-console.log(checkVotingStatus(20)); // Outputs: canvote
-console.log(checkVotingStatus(16)); // Outputs: cannot vote
+console.log(checkVotingStatus(20)); 
+console.log(checkVotingStatus(16)); 
 
