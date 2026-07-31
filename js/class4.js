@@ -62,3 +62,5 @@ console.log(n1) // returns a random number btw 0-1
 
 
 
+
+

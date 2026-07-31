@@ -49,8 +49,8 @@ while (count <= 5) {
 
 
 function generatePassword(length = 12) {
-  const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
-  let password = "";
+  const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&";
+  let password = 0;
 
   for (let i = 0; i < length; i++) {
     const randomIndex = Math.floor(Math.random() * chars.length);
@@ -62,3 +62,47 @@ function generatePassword(length = 12) {
 
 console.log("Generated password:", generatePassword());
 console.log("Generated password (16 chars):", generatePassword(16));
+a = 0
+while( a<3){
+console.log(a)
+a++
+}
+
+array  = ['Apple','Red','Brown']
+for(x = 0; x < array.length; x++){
+  console.log(array[x])
+} 
+
+person = {
+  name:"Solomon",
+  course: "Front end",
+  duration:"4 weeks"
+}
+for( x in person){
+  console.log(`${x[0].toUpperCase()}${x.slice(1)} : ${person[x]}`)
+}
+
+
+products = [
+  {id:1,amt:300, name:'Laptop', qty:12},
+  {id:2,amt:120, name:'Table', qty:2},
+  {id:3,amt:30, name:'AC', qty:0},
+  {id:4,amt:200, name:'TV', qty:22},
+  {id:5,amt:500, name:'Car', qty:10},
+]
+analytics = {
+  total_qty : 0,
+  total_products: products.length,
+  total_product_amt: 0,
+}
+products.forEach( i=> {
+  analytics.total_qty +=i.qty;
+  analytics.total_product_amt +=i.amt;
+  console.log(`==================================`)
+  console.log(`Name:${i.name}`)
+  console.log(`Qty:${i.qty}`)
+  console.log(`Unit Amt:${i.amt}`)
+  console.log(`Payment Total :${i.amt * i.qty}`)
+  console.log(`==================================`)
+})
+console.log(analytics)
