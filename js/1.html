@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // loops 
+  // for loop 
+  for(i = 0; i < 20; i++ ){
+    console.log(`${i}`)
+  }
+
+  fruits = ['Apple','Banana','Tomato','Red','Blue']
+ for(y = 0; y<fruits.length; y++){
+  console.log(fruits[y])
+ }
+ fruits.forEach((n,i) => {
+   console.log(`${i+1}. ${n}`)
+ });
+
+ car = {
+  name:"Toyota",
+  model:'Camry 2019',
+  color:'Red',
+ }
+ for(i in car){
+  console.log(`${i}: ${car[i]}`)
+ }
+
+ a = 0;
+ while(a<10){
+  console.log(a)
+  a++
+ }
+
+//  conditional stmts
+if(10 > 15){
+  console.log('Nice')
+}else{
+  console.log('Awesome')
+}
+
+pass = '0000'
+username = 'admin'
+if(pass == '0000' && username =='admn'){
+  console.log('Success ')
+}else{
+  console.log('Invalid credentials')
+}
+</script>
+</html>

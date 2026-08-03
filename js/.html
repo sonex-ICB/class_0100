@@ -6,21 +6,208 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <div class="d"></div>
-    <button id="btn"> click</button>
+    Awesome 
+    <p> Nice </p>
+    <div id="demo"></div>
+    <div id="demo1"></div>
+    <select name="" id="p_select"></select>
+    <table class="table">
+        <tr>
+            <td>#  </td>
+            <td>Named </td>
+            <td>Captial </td>
+            <td>No of areas </td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>la</td>
+            <td>Ik</td>
+            <td>343</td>
+        </tr>
+    </table>
+
+    <!--  -->
+    <div class="container mx-auto p-3">
+        <!-- <div class="alert alert-warning">
+            <b> date </b>
+            <br>
+            <i> Sender </i>
+            <p></p>
+        </div> -->
+    </div>
+
 </body>
 <script>
-    lk = document.createElement('link')
-    lk.rel="stylesheet"
-    color_mode = ''
-    lk.href= color_mode == 'dark' ? 'css.css' :'css1.css'
-    document.querySelector('body').append(lk)
-    document.querySelector('#btn').addEventListener('click',()=>{
-        color_mode  = color_mode  == 'dark' ? "" : 'dark'
-        lk.href = color_mode == 'dark' ? 'css.css' : 'css1.css'
-        // alert(color_mode)
-    })
+
+    a = 4
+    b = 5
+
+    text = ''
+    if(a>b){
+        text = 'Nice'
+    }else{
+        text = 'Awesome'
+    }
+
+
+    user_type = ['admin','staff','super-admin','customer']
+    context = ''
+    if(context == 'admin'){
+        console.log('Welcom Admin')
+    } 
+    else if(context == 'user'){
+        console.log('Welcom User')
+    }
+    else if(context =='customer'){
+        console.log('Welcom Customer')
+    }
+    else{
+        console.log('Welcom Super admin')   
+    }
+
+    console.log(text)
+
+
+    // 
+    // document
+    console.log(document)
+    // output 
+    document.writeln("Awesome")
+    document.writeln("<b>Nice </b>")
+    document.writeln("<b style='color:red;'>Nice </b>")
+    document.writeln("<b class='blue'>Nice </b>")
+
+    // Use existin element 
+    document.querySelector('#demo').innerHTML = 'Yello world'
+
+    //create an element
+    elt1 = document.createElement('h1')
+    elt1.innerHTML = 'hello world'
+    document.querySelector('body').appendChild(elt1)
+
+    demo1 = document.querySelector('#demo1')
+    demo1.innerHTML = 'Anoters text '
+    demo1.style.color  = 'red'
+    demo1.style.fontSize = '30px'
+    demo1.className = 'blue'
+    demo1.classList.add('w-text')
+    demo1.classList.remove('w-text')
+    // demo1.style.display = 'none'
+
     
+products = [
+  {id:1,amt:300, name:'Laptop', qty:12},
+  {id:2,amt:120, name:'Table', qty:2},
+  {id:3,amt:30, name:'AC', qty:0},
+  {id:4,amt:200, name:'TV', qty:22},
+  {id:5,amt:500, name:'Car', qty:10},
+]
+
+ol = document.createElement('ol')
+seleect = document.querySelector('#p_select');
+products.forEach(p => {
+    style = p.qty > 0 ? "blue" : 'red'
+    ol.innerHTML += `<li style='color:${style}'> ${p.name} </li>` 
+
+    seleect.innerHTML += p.qty>0 ? `<option>${p.name}</option>` : ''
+});
+
+const messages = [
+  {
+    id: 101,
+    sender: "Alice",
+    dateTime: "2026-08-03T09:15:00",
+    read: true,
+    body: "Hey, just checking in to see how you're doing."
+  },
+  {
+    id: 102,
+    sender: "Bob",
+    dateTime: "2026-08-03T10:30:00",
+    read: false,
+    body: "Reminder: Project meeting scheduled for tomorrow at 10 AM."
+  },
+  {
+    id: 103,
+    sender: "Charlie",
+    dateTime: "2026-08-03T11:45:00",
+    read: true,
+    body: "Thanks for sending over the files. Everything looks good!"
+  },
+  {
+    id: 104,
+    sender: "Diana",
+    dateTime: "2026-08-03T12:00:00",
+    read: false,
+    body: "Can you help me with the login issue I mentioned earlier?"
+  }
+];
+
+temp = ''
+messages.forEach( m =>{
+    css = m.read ? 'success':'warning'
+    temp+=` <div class="alert alert-${css}">
+            <b> ${m.dateTime} </b>
+            <br>
+            <i> ${m.sender} </i>
+            <p>${m.body}</p>
+        </div>`
+})
+document.querySelector('.container').innerHTML = temp
+
+
+
+
+document.querySelector('body').appendChild(ol)
+// classwork - Print above products in a select
+// skip if qty<1
+// display in a table, if not read add read button
+
+
+// 
+
+const nigeriaStatesAndCapitals = [
+  {
+    state: "Lagos",
+    capital: "Ikeja",
+    localAreas: [
+      "Agege", "Ajeromi-Ifelodun", "Alimosho", "Amuwo-Odofin", "Apapa",
+      "Badagry", "Epe", "Eti-Osa", "Ibeju-Lekki", "Ifako-Ijaiye",
+      "Ikeja", "Ikorodu", "Kosofe", "Lagos Island", "Lagos Mainland",
+      "Mushin", "Ojo", "Oshodi-Isolo", "Shomolu", "Surulere"
+    ]
+  },
+  {
+    state: "Abia",
+    capital: "Umuahia",
+    localAreas: [
+      "Aba North", "Aba South", "Isiala Ngwa North", "Isiala Ngwa South",
+      "Bende", "Ikwuano", "Ohafia", "Umuahia North", "Umuahia South", "Ukwa East", "Ukwa West"
+    ]
+  },
+  {
+    state: "Kaduna",
+    capital: "Kaduna",
+    localAreas: [
+      "Birnin Gwari", "Chikun", "Giwa", "Igabi", "Ikara", "Jaba", "Jema'a",
+      "Kachia", "Kaduna North", "Kaduna South", "Kagarko", "Kajuru", "Kaura",
+      "Kauru", "Kubau", "Kudan", "Lere", "Makarfi", "Sabon Gari", "Sanga", "Soba", "Zangon Kataf", "Zaria"
+    ]
+  }
+];
+// display  states in table =: serial, name, capital and no of lareas
+
+// dispplay only states in  a select 
+
 </script>
 </html>
+<style>
+    .blue{
+        color:blanchedalmond;
+        background: blue;
+        display: block;
+        padding: 10px;
+    }
+</style>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
