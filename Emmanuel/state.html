@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <table class="table table-bordered table-hover table-striped my-5 text-center">
+        <tr>
+            <th>S/N</th>
+            <th>State</th>
+            <th>Capital</th>
+            <th>LGA</th>
+        </tr>
+    </table>
+
+</body>
+
+</html>
+<script>
+    const nigeriaStatesAndCapitals = [{
+        state: "Lagos",
+        capital: "Ikeja",
+        localAreas: ["Agege", "Ajeromi-Ifelodun", "Alimosho", "Amuwo-Odofin", "Apapa",
+            "Badagry", "Epe", "Eti-Osa", "Ibeju-Lekki", "Ifako-Ijaiye",
+            "Ikeja", "Ikorodu", "Kosofe", "Lagos Island", "Lagos Mainland",
+            "Mushin", "Ojo", "Oshodi-Isolo", "Shomolu", "Surulere"
+        ]
+    }
+
+        ,
+    {
+        state: "Abia",
+        capital: "Umuahia",
+        localAreas: ["Aba North", "Aba South", "Isiala Ngwa North", "Isiala Ngwa South",
+            "Bende", "Ikwuano", "Ohafia", "Umuahia North", "Umuahia South", "Ukwa East", "Ukwa West"
+        ]
+    }
+
+        ,
+    {
+        state: "Kaduna",
+        capital: "Kaduna",
+        localAreas: ["Birnin Gwari", "Chikun", "Giwa", "Igabi", "Ikara", "Jaba", "Jema'a",
+            "Kachia", "Kaduna North", "Kaduna South", "Kagarko", "Kajuru", "Kaura",
+            "Kauru", "Kubau", "Kudan", "Lere", "Makarfi", "Sabon Gari", "Sanga", "Soba", "Zangon Kataf", "Zaria"
+        ]
+    }
+    ];
+
+    const table = document.querySelector('table')
+    nigeriaStatesAndCapitals.forEach((state, index) => {
+        table.innerHTML +=
+        `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${state.state}</td>
+                <td>${state.capital}</td>
+                <td>${state.localAreas.length}</td>
+            </tr>
+        `
+        
+    })
+
+</script>
