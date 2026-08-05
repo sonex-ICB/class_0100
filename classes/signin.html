@@ -9,7 +9,7 @@
     <form action="" method="POST">
         <label for=""> Email or Username</label>
         <div class="form-group">
-            <input type="text" required name="username" />
+            <input type="text" required name="username" id="email" />
         </div>
         <b> <a href="ps"></a></b>
         <p> <text style="">welcome to </text> <text></text> </p>
@@ -17,7 +17,7 @@
         
         <label for=""> Password</label>
         <div  class="form-group">
-            <input type="password" required name="password" />
+            <input type="password" required name="password"  id="pass"/>
             <button> Show </button>
         </div>
 
@@ -41,11 +41,22 @@
 <script>
     function submitFrom(){
         let response_elt = document.querySelector('.response')
-        let email = ''
-        let pass = ''
+        let email = document.querySelector('#email').value
+        let pass = document.querySelector('#pass').value
         let status  = pass =='' || email == '' 
-        response_elt.innerHTML = status ? "Success":"Error"
-        response_elt.style.color = status ? "blue":"red"
+        if(status){
+            response_elt.innerHTML =  "Imcomplete data "
+            response_elt.style.color = "red"
+        }else{
+            const db = {
+                username:'admin',
+                passk:'1234'
+            }
+            verify = db.username == email && db.passk == pass
+            response_elt.innerHTML = verify ? "Succesful": "Invlaid credentials"
+            response_elt.style.color =  verify ? "blue" :"red"
+            
+        }
     }
 </script>
 </html>

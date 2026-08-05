@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo{
+            background: #990;
+            padding: 12px;
+            overflow:visible;
+            overflow: auto;
+            overflow:hidden;
+            width: 200px;
+            height: 200px;   
+        }
+
+        /*  */
+        .bar{
+            width: 90%;
+            max-width: 450px;
+            background: rgba(0, 0, 255, 0.163);
+            margin: 10px auto;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .pro{
+            width: 70%;
+            padding: 5px;
+            background: blue;
+
+        }
+        .demo1{
+            width: 30px;
+            height: 30px;
+            border:3px solid #000;
+            transition: 2s;
+            rotate: -45deg;
+            border-top-color:transparent;
+            border-radius: 50%;
+            &:hover{
+                /* width: 100%; */
+                rotate: 45deg;
+
+                background: red;
+            }
+        }
+        .demo2{
+            width: 20px;
+            height: 20px;
+            border:5px solid blue;
+            transition: 2s;
+            rotate: -45deg;
+            border-top-color:rgba(0, 0, 255, 0.235);
+            border-radius: 50%;
+            margin: 30px;
+            
+        }
+        
+        @keyframes spin {
+            30%{
+                rotate:0deg
+            }
+            100%{
+                rotate:360deg
+            }
+        }
+    </style>
+</head>
+<body>
+   <!-- overflow -->
+    <div class="demo" >
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, sint qui necessitatibus eum omnis iure est, iste consequatur rerum a fugiat minima porro quam commodi adipisci amet? Id, odio modi.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, sint qui necessitatibus eum omnis iure est, iste consequatur rerum a fugiat minima porro quam commodi adipisci amet? Id, odio modi.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, sint qui necessitatibus eum omnis iure est, iste consequatur rerum a fugiat minima porro quam commodi adipisci amet? Id, odio modi.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, sint qui necessitatibus eum omnis iure est, iste consequatur rerum a fugiat minima porro quam commodi adipisci amet? Id, odio modi.
+    </div>
+
+    <!--  -->
+    <div class="bar">
+        <div class="pro"></div>
+    </div>
+
+    <!-- transition  -->
+     <div class="demo1"></div>
+     <!-- animation  -->
+      <div class="demo2"></div>
+</body>
+</html>
