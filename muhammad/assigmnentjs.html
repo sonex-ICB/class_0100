@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigerian States Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>List of Nigerian States</h2>
+
+    <!-- Table Structure -->
+    <table>
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>State Name</th>
+                <th>Capital</th>
+                <th>No. of LGAs</th>
+            </tr>
+        </thead>
+        <tbody id="statesTableBody">
+            <!-- Table rows will be dynamically populated here -->
+        </tbody>
+    </table>
+
+    <script>
+
+        const nigeriaStatesAndCapitals = [
+            {
+                state: "Lagos",
+                capital: "Ikeja",
+                localAreas: [
+                    "Agege", "Ajeromi-Ifelodun", "Alimosho", "Amuwo-Odofin", "Apapa",
+                    "Badagry", "Epe", "Eti-Osa", "Ibeju-Lekki", "Ifako-Ijaiye",
+                    "Ikeja", "Ikorodu", "Kosofe", "Lagos Island", "Lagos Mainland",
+                    "Mushin", "Ojo", "Oshodi-Isolo", "Shomolu", "Surulere"
+                ]
+            },
+            {
+                state: "Abia",
+                capital: "Umuahia",
+                localAreas: [
+                    "Aba North", "Aba South", "Isiala Ngwa North", "Isiala Ngwa South",
+                    "Bende", "Ikwuano", "Ohafia", "Umuahia North", "Umuahia South", "Ukwa East", "Ukwa West"
+                ]
+            },
+            {
+                state: "Kaduna",
+                capital: "Kaduna",
+                localAreas: [
+                    "Birnin Gwari", "Chikun", "Giwa", "Igabi", "Ikara", "Jaba", "Jema'a",
+                    "Kachia", "Kaduna North", "Kaduna South", "Kagarko", "Kajuru", "Kaura",
+                    "Kauru", "Kubau", "Kudan", "Lere", "Makarfi", "Sabon Gari", "Sanga", "Soba", "Zangon Kataf", "Zaria"
+                ]
+            }
+        ];
+
+        
+        const tableBody = document.getElementById("statesTableBody");
+
+        
+        tableBody.innerHTML = nigeriaStatesAndCapitals.map((item, index) => {
+            return `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${item.state}</td>
+                    <td>${item.capital}</td>
+                    <td>${item.localAreas.length}</td>
+                </tr>
+            `;
+        }).join("");
+
+
+
+
+
+        ol = document.createElement('ol')
+seleect =document.querySelector('#stateTableBody');
+nigeriaStatesAndCapitals.forEach(p => {
+    ol.innerHTML += `<li> ${p.state} </li>`
+    seleect.innerHTML += `<option>${p.state}</option>`
+});
+
+
+document.querySelector('stateTableBody').appendChild(ol)
+    </script>
+
+</body>
+</html>
