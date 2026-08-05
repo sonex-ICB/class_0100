@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>States Table</title>
+</head>
+<body>
+  <h2>States of Nigeria</h2>
+  <table border="1" id="statesTable">
+    <thead>
+      <tr>
+        <th>Serial</th>
+        <th>State Name</th>
+        <th>Capital</th>
+        <th>No. of Local Areas</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const states = [
+      { name: "Abia", capital: "Umuahia", localAreas: 17 },
+      { name: "Adamawa", capital: "Yola", localAreas: 21 },
+      { name: "Akwa Ibom", capital: "Uyo", localAreas: 31 },
+      { name: "Anambra", capital: "Awka", localAreas: 21 },
+      { name: "Bauchi", capital: "Bauchi", localAreas: 20 },
+      { name: "Bayelsa", capital: "Yenagoa", localAreas: 8 },
+      { name: "Benue", capital: "Makurdi", localAreas: 23 },
+      { name: "Borno", capital: "Maiduguri", localAreas: 27 },
+      { name: "Cross River", capital: "Calabar", localAreas: 18 },
+      { name: "Delta", capital: "Asaba", localAreas: 25 },
+      { name: "Ebonyi", capital: "Abakaliki", localAreas: 13 },
+      { name: "Edo", capital: "Benin City", localAreas: 18 },
+      { name: "Ekiti", capital: "Ado-Ekiti", localAreas: 16 },
+      { name: "Enugu", capital: "Enugu", localAreas: 17 },
+      { name: "Gombe", capital: "Gombe", localAreas: 11 },
+      { name: "Imo", capital: "Owerri", localAreas: 27 },
+      { name: "Jigawa", capital: "Dutse", localAreas: 27 },
+      { name: "Kaduna", capital: "Kaduna", localAreas: 23 },
+      { name: "Kano", capital: "Kano", localAreas: 44 },
+      { name: "Katsina", capital: "Katsina", localAreas: 34 },
+      { name: "Kebbi", capital: "Birnin Kebbi", localAreas: 21 },
+      { name: "Kogi", capital: "Lokoja", localAreas: 21 },
+      { name: "Kwara", capital: "Ilorin", localAreas: 16 },
+      { name: "Lagos", capital: "Ikeja", localAreas: 20 },
+      { name: "Nasarawa", capital: "Lafia", localAreas: 13 },
+      { name: "Niger", capital: "Minna", localAreas: 25 },
+    ];
+
+    const tbody = document.querySelector("#statesTable tbody");
+
+    states.forEach((state, index) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${state.name}</td>
+        <td>${state.capital}</td>
+        <td>${state.localAreas}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  </script>
+</body>
+</html>

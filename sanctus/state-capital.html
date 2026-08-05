@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <select id="p_select" class="form-select"></select>
+
+    <div class="container mx-auto p-3">
+    </div>
+    <script>
+        const nigeriaStatesAndCapitals = [
+            {
+                state: "Abia",
+                capital: "Umuahia",
+                localAreas: [
+                    "Aba North", "Aba South", "Bende", "Ikwuano", "Ohafia"
+                ]
+            },
+            {
+                state: "Adamawa",
+                capital: "Yola",
+                localAreas: [
+                    "Yola North", "Yola South", "Mubi North", "Mubi South", "Numan"
+                ]
+            },
+            {
+                state: "Akwa Ibom",
+                capital: "Uyo",
+                localAreas: [
+                    "Uyo", "Eket", "Ikot Ekpene", "Oron", "Ikono"
+                ]
+            },
+            {
+                state: "Anambra",
+                capital: "Awka",
+                localAreas: [
+                    "Awka South", "Onitsha North", "Onitsha South", "Nnewi North", "Idemili North"
+                ]
+            },
+            {
+                state: "Bauchi",
+                capital: "Bauchi",
+                localAreas: [
+                    "Bauchi", "Dass", "Darazo", "Katagum", "Toro"
+                ]
+            },
+            {
+                state: "Bayelsa",
+                capital: "Yenagoa",
+                localAreas: [
+                    "Yenagoa", "Brass", "Ekeremor", "Kolokuma/Opokuma", "Sagbama"
+                ]
+            },
+            {
+                state: "Benue",
+                capital: "Makurdi",
+                localAreas: [
+                    "Makurdi", "Gboko", "Otukpo", "Guma", "Katsina-Ala"
+                ]
+            },
+            {
+                state: "Borno",
+                capital: "Maiduguri",
+                localAreas: [
+                    "Maiduguri", "Biu", "Dikwa", "Monguno", "Gwoza"
+                ]
+            },
+            {
+                state: "Cross River",
+                capital: "Calabar",
+                localAreas: [
+                    "Calabar Municipal", "Calabar South", "Ikom", "Ogoja", "Obubra"
+                ]
+            },
+            {
+                state: "Delta",
+                capital: "Asaba",
+                localAreas: [
+                    "Warri South", "Sapele", "Ughelli North", "Oshimili South", "Udu"
+                ]
+            },
+            {
+                state: "Ebonyi",
+                capital: "Abakaliki",
+                localAreas: [
+                    "Abakaliki", "Afikpo North", "Afikpo South", "Ohaukwu", "Ezza South"
+                ]
+            },
+            {
+                state: "Edo",
+                capital: "Benin City",
+                localAreas: [
+                    "Oredo", "Egor", "Ikpoba Okha", "Ovia North East", "Uhunmwonde"
+                ]
+            },
+            {
+                state: "Ekiti",
+                capital: "Ado-Ekiti",
+                localAreas: [
+                    "Ado Ekiti", "Ikere", "Ikole", "Irepodun/Ifelodun", "Moba"
+                ]
+            },
+            {
+                state: "Enugu",
+                capital: "Enugu",
+                localAreas: [
+                    "Enugu North", "Enugu South", "Nsukka", "Udi", "Oji River"
+                ]
+            },
+            {
+                state: "Gombe",
+                capital: "Gombe",
+                localAreas: [
+                    "Gombe", "Akko", "Yamaltu Deba", "Kaltungo", "Billiri"
+                ]
+            },
+            {
+                state: "Imo",
+                capital: "Owerri",
+                localAreas: [
+                    "Owerri Municipal", "Orlu", "Okigwe", "Mbaitoli", "Oru East"
+                ]
+            },
+            {
+                state: "Jigawa",
+                capital: "Dutse",
+                localAreas: [
+                    "Dutse", "Hadejia", "Gumel", "Kazaure", "Birnin Kudu"
+                ]
+            },
+            {
+                state: "Kaduna",
+                capital: "Kaduna",
+                localAreas: [
+                    "Kaduna North", "Kaduna South", "Zaria", "Chikun", "Kafanchan"
+                ]
+            },
+            {
+                state: "Lagos",
+                capital: "Ikeja",
+                localAreas: [
+                    "Ikeja", "Alimosho", "Badagry", "Epe", "Ikorodu"
+                ]
+            }
+        ];
+
+        temp = `
+<h3>States</h3>
+<table class="table">
+
+</tr>
+<td>#</td>
+<td>Name</td>
+<td>Capital</td>
+<td>No of areas</td>
+</tr>`
+
+        select = document.querySelector('#p_select')
+        
+        nigeriaStatesAndCapitals.forEach((s, index) => {
+            temp += `
+<tr>
+<td>${index + 1}</td>
+<td>${s.state}</td>
+<td>${s.capital}</td>
+<td>${s.localAreas.length}</td>
+</tr>`
+
+            select.innerHTML += `<option>${s.state}</option> `
+        })
+
+        temp += `</table>`
+        document.querySelector('.container').innerHTML = temp
+    </script>
+</body>
+
+</html>
