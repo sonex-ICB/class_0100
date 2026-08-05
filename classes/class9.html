@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <input data-anytin = '' data-name="Full Name" type="text" placeholder="" style="color:red" value="12345789">
+    <div  class="demo" > lorem </div>
+    <div id="demo"></div>
+</body>
+<script>
+    document.writeln(document.querySelector('div').innerHTML)
+    document.querySelector('#demo').innerHTML = 'New content'
+    document.querySelector('input').id = 'password'
+    document.querySelector('input').className = 'password'
+    document.querySelector('input').placeholder = 'password'
+    document.querySelector('input').style.color = 'red'
+    
+    document.querySelector('#demo').innerHTML = document.querySelector('input').dataset.name + " Cannot be empty" 
+    
+
+
+person = {
+    
+        first:"Solomon",
+        last:"Mary",
+        "full name": "Solomon Mary", //`${this.first} ${this.last}`, 
+
+    details:function(x){
+         document.write(this[x])
+    }
+}
+// document.write(person.name.first)
+person.details('first')
+person.details('last')
+person.details('we')
+
+function sum(a,b){
+    document.write(a+b)
+}
+sum(4,9)
+sum(0,7)
+sum('we','efsd')
+document.writeln(person.first)
+document.writeln(person['first'])
+document.writeln(person['full name'])
+person.name = 'KK'
+
+
+</script>
+</html>

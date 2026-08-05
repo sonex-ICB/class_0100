@@ -22,8 +22,8 @@
         </div>
 
         <p> <a href="forgot-password.html"> Forgot Password </a> </p>
-        
-        <button type="submit"> Submit   </button>
+        <div class="response"></div>
+        <button type="button" onclick="submitFrom()"> Submit   </button>
         <div>
             <hr>
             <span> login wit</span>
@@ -38,4 +38,14 @@
         <p> Dont ave an account  <a href="signup.html"> Sign Up </a></p>
     </form>
 </body>
+<script>
+    function submitFrom(){
+        let response_elt = document.querySelector('.response')
+        let email = ''
+        let pass = ''
+        let status  = pass =='' || email == '' 
+        response_elt.innerHTML = status ? "Success":"Error"
+        response_elt.style.color = status ? "blue":"red"
+    }
+</script>
 </html>

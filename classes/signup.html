@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-59mflmEHdfG3+iNat6Jg0HZPgYcAhZ7q0VO+q50sfkQDMBpoaSJfjJU2HuH5aBeMZyTwfKB54G8hratLP3Jsow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/signup.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 </head>
 <body>
     <section>
@@ -36,16 +39,16 @@
                 <h3> Get started </h3>
                 <p> Please fill all required fields</p>
                 <label for="first_name">First Name</label>
-                <input type="text" placeholder="Mary" id="first_name">
+                <input data-name="First Name" type="text" placeholder="Mary" id="first_name">
                 
                 <label for="last_name">Last Name</label>
-                <input type="text" placeholder="Mat" id="last_name">
+                <input data-name="Last Name" type="text" placeholder="Mat" id="last_name">
 
                 <label for="email">Email</label>
-                <input type="email" placeholder="someone@mail.com" id="email">
+                <input data-name="Email" type="email" placeholder="someone@mail.com" id="email">
 
                 <label for="mobile_number">Mobile Number</label>
-                <input type="text" placeholder="+234" id="mobile_number">
+                <input data-name="Mobile NUmber" type="text" placeholder="+234" id="mobile_number">
 
                 <label for="gender">Gender</label>
                 <select name="" id="gender">
@@ -57,6 +60,9 @@
 
                 <label for="address">Address </label>
                 <textarea name="" rows="5" id="address">No 4 First street </textarea>
+                <div class=" d-none alert alert-warning my-4">
+                    error! Somexsscsds
+                </div>
                 <button type="submit"> Submit </button>
                 <div>
                     <input type="checkbox">
@@ -67,18 +73,13 @@
         </div>
 
     </section>
-    <!--  Assignement  -->
-    <!-- Create a signup form  -->
 
-    <!-- 
-        1. First name
-        2. last  name
-        3. Email 
-        4. Address 
-        5. Date of Birt
-        6. gender
-        7. select course 
-        8. Mobile Number 
-    -->
+
 </body>
+<script>
+    document.querySelectorAll('input').forEach(i =>{
+        i.placeholder = i.dataset.name + " cannot be empty"
+        i.style.border='1px solid #900!important'
+    }) 
+</script>
 </html>
