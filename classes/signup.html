@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-59mflmEHdfG3+iNat6Jg0HZPgYcAhZ7q0VO+q50sfkQDMBpoaSJfjJU2HuH5aBeMZyTwfKB54G8hratLP3Jsow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-59mflmEHdfG3+iNat6Jg0HZPgYcAhZ7q0VO+q50sfkQDMBpoaSJfjJU2HuH5aBeMZyTwfKB54G8hratLP3Jsow=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="assets/css/signup.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <section>
         <div class="panel left-panel">
@@ -22,7 +34,7 @@
             <div class="desc">
                 <p> Best Banking and loan services services </p>
                 <ul>
-                    <li> <i class="ri-shield-check-line"></i>  Secured</li>
+                    <li> <i class="ri-shield-check-line"></i> Secured</li>
                     <li> <i class="ri-flashlight-line"></i> Fast</li>
                     <li> <i class="ri-check-double-fill"></i> reliable</li>
                 </ul>
@@ -30,25 +42,25 @@
             </div>
         </div>
         <div class="panel end-panel">
-             <div class="title">
+            <div class="title">
                 <div class="icon"><span> <i class="ri-building-fill"></i> </span> </div>
                 <h1> UPMONEY</h1>
                 <p>MICRO FINANCE BANK</p>
             </div>
-            <form action="">
+            <form action="" novalidate>
                 <h3> Get started </h3>
                 <p> Please fill all required fields</p>
                 <label for="first_name">First Name</label>
-                <input data-name="First Name" type="text" placeholder="Mary" id="first_name">
-                
+                <input id="first_name" data-name="First Name" type="text" placeholder="Mary" id="first_name" required>
+
                 <label for="last_name">Last Name</label>
-                <input data-name="Last Name" type="text" placeholder="Mat" id="last_name">
+                <input id="last_name" data-name="Last Name" type="text" placeholder="Mat" id="last_name">
 
                 <label for="email">Email</label>
-                <input data-name="Email" type="email" placeholder="someone@mail.com" id="email">
+                <input id="email" data-name="Email" type="email" placeholder="someone@mail.com" id="email">
 
                 <label for="mobile_number">Mobile Number</label>
-                <input data-name="Mobile NUmber" type="text" placeholder="+234" id="mobile_number">
+                <input id="mobile_number" data-name="Mobile Number" type="text" placeholder="+234" id="mobile_number">
 
                 <label for="gender">Gender</label>
                 <select name="" id="gender">
@@ -59,7 +71,7 @@
                 </select>
 
                 <label for="address">Address </label>
-                <textarea name="" rows="5" id="address">No 4 First street </textarea>
+                <textarea name="" rows="5" id="address" id="address">No 4 First street </textarea>
                 <div class=" d-none alert alert-warning my-4">
                     error! Somexsscsds
                 </div>
@@ -77,9 +89,51 @@
 
 </body>
 <script>
-    document.querySelectorAll('input').forEach(i =>{
-        i.placeholder = i.dataset.name + " cannot be empty"
-        i.style.border='1px solid #900!important'
-    }) 
+    document.querySelector('form').addEventListener('submit', (event) => {
+        event.preventDefault()
+        submit_form()
+    })
+
+    function submit_form() {
+        let inputs = document.querySelectorAll('input, select, textarea')
+        let USER = {};
+        let is_complete = true;
+        inputs.forEach(i => {
+            if (i.value.trim() == '') {
+                i.placeholder = i.dataset.name + " cannot be empty"
+                is_complete = false;
+                i.classList.add('border-warning')
+            } else {
+                i.classList.remove('border-warning')
+                USER[i.id] = i.value.trim();
+            }
+        })
+        console.log(USER)
+        if (is_complete) {
+            // server request 
+            response = [
+                {
+                    icon:"error",
+                    title:"Error",
+                    html:"An error occured! Try later",
+                },
+                {
+                    icon:"success",
+                    title:"Success",
+                    html:`Account created succesfully`,
+                }
+            ]
+            let sm = Math.round(Math.random());
+            Swal.fire({
+                icon:  response[sm].icon,
+                title: response[sm].title,
+                html:  response[sm].html 
+            })
+        }
+    }
+
+
+
 </script>
+
 </html>

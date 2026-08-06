@@ -4,86 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .demo{
-            background: #990;
-            padding: 12px;
-            overflow:visible;
-            overflow: auto;
-            overflow:hidden;
-            width: 200px;
-            height: 200px;   
-        }
-
-        /*  */
-        .bar{
-            width: 90%;
-            max-width: 450px;
-            background: rgba(0, 0, 255, 0.163);
-            margin: 10px auto;
-            border-radius: 14px;
-            overflow: hidden;
-        }
-        .pro{
-            width: 70%;
-            padding: 5px;
-            background: blue;
-
-        }
-        .demo1{
-            width: 30px;
-            height: 30px;
-            border:3px solid #000;
-            transition: 2s;
-            rotate: -45deg;
-            border-top-color:transparent;
-            border-radius: 50%;
-            &:hover{
-                /* width: 100%; */
-                rotate: 45deg;
-
-                background: red;
-            }
-        }
-        .demo2{
-            width: 20px;
-            height: 20px;
-            border:5px solid blue;
-            transition: 2s;
-            rotate: -45deg;
-            border-top-color:rgba(0, 0, 255, 0.235);
-            border-radius: 50%;
-            margin: 30px;
-            
-        }
-        
-        @keyframes spin {
-            30%{
-                rotate:0deg
-            }
-            100%{
-                rotate:360deg
-            }
-        }
-    </style>
 </head>
 <body>
-   <!-- overflow -->
-    <div class="demo" >
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, sint qui necessitatibus eum omnis iure est, iste consequatur rerum a fugiat minima porro quam commodi adipisci amet? Id, odio modi.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, sint qui necessitatibus eum omnis iure est, iste consequatur rerum a fugiat minima porro quam commodi adipisci amet? Id, odio modi.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, sint qui necessitatibus eum omnis iure est, iste consequatur rerum a fugiat minima porro quam commodi adipisci amet? Id, odio modi.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, sint qui necessitatibus eum omnis iure est, iste consequatur rerum a fugiat minima porro quam commodi adipisci amet? Id, odio modi.
-    </div>
+    Welcome to my site
+    <b style="color:red"> Am a bold text </b>
+    <div id="demo"></div>
+    <div id="demo2"></div>
+    <section>Text </section>
+    <section id="demo" class="p-2 blue">
 
-    <!--  -->
-    <div class="bar">
-        <div class="pro"></div>
-    </div>
 
-    <!-- transition  -->
-     <div class="demo1"></div>
-     <!-- animation  -->
-      <div class="demo2"></div>
+    </section>
+    <ol id="list1"></ol>
+    <table id="table1">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Course</th>
+            <th>Duration</th>
+        </tr>
+    </table>
 </body>
+<script>
+    // alert("Welcome to my site")
+    
+    document.writeln("<i style='color:blue'>Welcome to my website</i>")
+    document.querySelector('#demo').innerHTML = "Welcome to dis site"
+    document.getElementById('demo2').innerHTML = "Welcome to dis site"
+    
+    document.querySelector('section').innerHTML = "Welcome to dis site"
+
+    // 
+    const my_elt = document.querySelector('section')
+    document.writeln(my_elt)
+    document.writeln(my_elt.innerHTML)
+    my_elt.style.color = "red"
+    my_elt.style.border = "1px solid red"
+    my_elt.className = "blue p-2"
+    my_elt.id= 'demo'
+
+    // 
+
+    fruits = ['Apple','Water melon','Red','Blue','Coconut']
+    let list1_elt = document.querySelector('#list1');
+    fruits.forEach(f => {
+        list1_elt.innerHTML += `<li>${f}</li>`
+    });
+
+    const users = [
+        {
+            name:"Solomon",
+            Address: "Wuse",
+            course:"Front end",
+            duration:"4 Weeks",
+        },
+        {
+            name:"Mary",
+            Address: "Wuse",
+            course:"Front end",
+            duration:"4 Weeks",
+        },
+        {
+            name:"Don",
+            Address: "Wuse",
+            course:"Front end",
+            duration:"4 Weeks",
+        },
+    ]
+
+    let users_table = document.querySelector('#table1')
+    users.forEach((u,i) =>{
+        users_table.innerHTML += `<tr>
+            <td>${i+1}</td>
+            <td>${u.name}</td>
+            <td>${u.Address}</td>
+            <td>${u.course}</td>
+            <td>${u.duration}</td>
+            </tr>
+            `
+    })
+
+
+
+
+</script>
 </html>
+<style>
+    .blue{
+        background: black;
+    }
+    .p-2{
+        padding: 20px;
+    }
+</style>

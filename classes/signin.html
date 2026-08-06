@@ -11,14 +11,14 @@
         <div class="form-group">
             <input type="text" required name="username" id="email" />
         </div>
-        <b> <a href="ps"></a></b>
-        <p> <text style="">welcome to </text> <text></text> </p>
+        <b> <a href=""></a></b>
+        <p>  Welcome to  </p>
 
         
         <label for=""> Password</label>
         <div  class="form-group">
             <input type="password" required name="password"  id="pass"/>
-            <button> Show </button>
+            <button type="button" onclick="view_pass(this)"> Show </button>
         </div>
 
         <p> <a href="forgot-password.html"> Forgot Password </a> </p>
@@ -57,6 +57,11 @@
             response_elt.style.color =  verify ? "blue" :"red"
             
         }
+    }
+    function view_pass(btn){
+        let passelt =  document.querySelector('#pass');
+        btn.innerHTML = passelt.type == 'text' ? 'Show' :'hide'
+        passelt.type = passelt.type == 'text' ? 'password': 'text'
     }
 </script>
 </html>
