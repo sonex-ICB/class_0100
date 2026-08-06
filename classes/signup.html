@@ -101,7 +101,7 @@
         inputs.forEach(i => {
             if (i.value.trim() == '') {
                 i.placeholder = i.dataset.name + " cannot be empty"
-                is_complete = false;
+                  = false;
                 i.classList.add('border-warning')
             } else {
                 i.classList.remove('border-warning')
