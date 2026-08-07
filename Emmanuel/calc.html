@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body{
+            background: #1b1b1bfc;
+            color: white;
+        }
+        button{
+            padding: 25px;
+            margin: 10px;
+            border: 0;
+            background-color: rgb(32, 32, 32);
+            color: white;
+            border-radius: 8px;
+        block;
+        }
+        input{
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+            max-width: 400px;
+            margin: 50px auto;
+            border-radius: 8px;
+        } 
+        .container{
+            background: #0000007b;
+            width: fit-content;
+            position: fixed;
+            left: 50%;
+            border-radius: 8px;
+            box-shadow: 0 0 5px .5px rgba(30, 30, 30, 0.217);
+        }
+    </style>
+</head>
+<!-- you are using eval in this code -->
+<body>
+    <div class="show"></div>
+    <section class="container mx-3 p-4 bg-black ">
+        <div class="calc">
+            <input type="text" id="first_number">
+        </div>
+        <div class="nums p-4">
+
+            <button id= 'num' >7</button>
+            <button id= 'num'>8</button>
+            <button id= 'num' >9</button>
+            <button class= 'operator'>+</button>
+        <div> 
+            <button">4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>-</button>
+        </div>
+
+        <div>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>×</button>
+        </div>
+
+        <div>
+            <button>0</button>
+            <button>.</button>
+            <button>=</button>
+            <button>÷</button>
+        </div>
+
+        </div>
+    </section>
+</body>
+<script>
+    const section = document.querySelector('.nums')
+    const input = document.querySelector('#first_number')
+
+    section.addEventListener('click', (e)=> {
+        if (e.target.tagName !== 'BUTTON') return ''
+
+        let value = e.target.textContent
+
+        if (value === '='){
+            input.value = eval(input.value)
+        }else{
+            input.value += value
+        }
+        const shown = document.querySelector('.show')
+        shown.innerHTML = input.value
+    })
+   
+</script>
+</html>
