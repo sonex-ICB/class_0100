@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="text1"></div>
+    <div class="text2"></div>
+    <div class="progress m-3">
+        <div class="progress-bar " id="bar"> 50%</div>
+    </div>
+</body>
+<script>
+    // window Object
+    // location.href = 'class.txt'
+    console.log(location)
+    document.write(`<br> Location : ${location.href}`)
+    document.write(`<br> Window Widt : ${innerWidth}`)
+    document.write(`<br> Window Height : ${innerHeight}`)
+    document.write(`<br> Screen Width : ${screen.width}`)
+    document.write(`<br> Screen Height : ${screen.height}`)
+
+    // alerts 
+    // alert() // Info
+//    let y =  confirm('Do you want to continue to payment') // true or false 
+//    if(y)location = 'buy-now.html'
+
+   
+//    let x =  prompt() // User custom input 
+//    x_user = 'No user found'
+//    if(x) x_user = x
+
+//    document.write(x_user)
+
+//    
+s_timeout = setTimeout(()=>{
+    document.querySelector('.text1').innerHTML = 'A time out text'
+}, (1000 * 2))
+
+i=0;
+s_interval = setInterval(()=>{
+    i++
+    document.querySelector('.text2').innerHTML = i  
+},1000)
+
+setTimeout(()=>{
+    clearInterval(s_interval)
+},(8 * 1000))
+
+bar =  document.querySelector('#bar')
+i = 0;
+pro_b = setInterval(()=>{
+    i+=2
+    bar.style.width = `${i}%`
+    bar.innerHTML = `${i}%`;
+},100)
+setTimeout(()=>{
+    clearInterval(pro_b)
+},(100 *48))
+
+
+// dates 
+today = new Date()
+secs = today.getSeconds()
+mins = today.getMinutes()
+hours = today.getHours()
+document.write(`<br> <b>${today}</b>`)
+elt  = document.createElement('h1');
+elt.id = 'time'
+elt.innerHTML = `${hours} : ${mins} : ${secs}`
+document.querySelector('body').appendChild(elt)
+// Trandform into a di time and sync 
+
+// json  - js obect notation - file format 
+ text = "'text'"
+ text = ""
+ tex  = 9
+ text = true || false 
+ text = {
+    "name":"Solomon"
+ }
+ text = '{"name":"Solomon"}'
+
+ text1 = {
+    name : 'solmon',
+}
+document.write(`<br> ${text}`)
+document.write(`<br> ${JSON.parse(text)}`)
+document.write(`<br> ${JSON.stringify(text1)}`)
+
+
+// parse, strin
+// AJAX - Async JS and XML, 
+
+async function my_request(){
+    let myr = await fetch('.json');
+    let res = await myr.json()
+    document.write(res)
+}
+my_request()
+
+// 
+a = 10
+function new_request(){
+    const req_data = {
+        method:"POST" || "",
+        body: JSON.stringify(person)
+    }
+    person ={
+        name:"solomon",
+        add:"Wuse"
+    }
+    // fetch(`c.json?data={"name":"Solomn","add":"wuse"}`)
+    fetch(`c.json`,req_data)
+    .then(r => r.json())
+    .then(r =>{
+        document.write(r)
+    })
+    .catch(e=>{
+        document.write("try later")
+
+    })
+}
+new_request()
+ 
+</script>
+</html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
