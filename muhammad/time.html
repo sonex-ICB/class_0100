@@ -1,0 +1,54 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Synced Clock</title>
+</head>
+<body>
+
+  <div class="clock-container">
+    <div id="date" class="date-display">Loading</div>
+    <div id="time" class="time-display">00:00:00</div>
+  </div>
+
+  <script>
+    const dateElement = document.getElementById('date');
+    const timeElement = document.getElementById('time');
+
+    function updateClock() {
+      const now = new Date();
+
+      const dateOptions = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      };
+      dateElement.textContent = now.toLocaleDateString('en-US', dateOptions);
+
+      const timeOptions = { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit', 
+        hour12: true 
+      };
+      timeElement.textContent = now.toLocaleTimeString('en-US', timeOptions);
+    }
+
+    function startSyncClock() {
+      updateClock();
+
+      const now = new Date();
+      const delayUntilNextSecond = 1000 - now.getMilliseconds();
+
+      setTimeout(() => {
+        updateClock();
+        setInterval(updateClock, 1000);
+      }, delayUntilNextSecond);
+    }
+
+    startSyncClock();
+  </script>
+</body>
+</html>
