@@ -32,41 +32,55 @@
     </div> -->
 
   </div>
+  <div class="container">
+    <div class="fw-bold">Total : <span id="total"></span> </div>
+    <button class="btn btn-danger" onclick="clear_cart()"> Clear Cart </button>
+  </div>
 
 </body>
 <script>
-  let previous_items =  localStorage.getItem('cart_items')
-  let CART = previous_items ?   JSON.parse(previous_items) :  [];
-  let products = '';
+  let total = 0;
+  let previous_items = localStorage.getItem('cart_items')
+  let CART = previous_items ? JSON.parse(previous_items) : [];
   let products_container = document.querySelector('#products_container');
   function load_products() {
     fetch('.json')
       .then(p => p.json())
       .then(p => {
-        products = p;
-        products.forEach(p => {
-          is_available = p.qty > 0
-          if (is_available) {
-            products_container.innerHTML += (`<div class="col-sm col-md-6 col-lg-4 my-3 ">
-      <div class="card shadow overflow-hidden border">
-        <img src="${p.pic}" width="100%" alt="">
-        <div class="p-2">
-          <div class="fw"> ${p.name} </div>
-          <div class="d-flex justify-content-between">
-            <div>
-              <button class="btn btn-primary btn-sm" onclick='add_to_cart("${p.id}")'> Add Cart</button>
-              <button class="btn btn-primary btn-sm" onclick='viewProduct("${p.id}")'> View </button>
-
-            </div>
-            <div class="fw-bold "> N${p.price}</div>
-          </div>
-        </div>
-      </div>
-    </div>`)
-          }
+        products = [];
+          if (CART) {
+        p.forEach(p => {
+          CART.forEach(c => {
+            if (c == p.id) {
+              products.push(p)
+            }
+          })
         })
-      })
-      .catch(e =>{
+      
+          products.forEach(p => {
+            total += p.price;
+            products_container.innerHTML += (`<div class="col-12 col-md-6 col-lg-4 my-3 mx-auto ">
+                                          <div class="card shadow overflow-hidden border">
+                                            <div class="p-2">
+                                              <div class="fw"> ${p.name} </div>
+                                              <div class="d-flex justify-content-between">
+                                                <div>
+
+                                                </div>
+                                                <div class="fw-bold "> N${p.price}</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div></div>`)
+          })
+        }else{
+                    products_container.innerHTML = 'No items please return to <a href="products.html"> home </a>'
+          return
+        }
+          document.querySelector('#total').innerHTML = ` N${total}`
+        })
+      .catch(e => {
         document.writeln(e)
       })
   }
@@ -78,8 +92,8 @@
       localStorage.setItem('cart_items', JSON.stringify(CART))
       document.querySelector('#cart_display').innerHTML = CART.length
     }
-    url = `cart.html?items=${JSON.stringify(CART)}` 
-    document.querySelector('#cart_display').href= url
+    url = `cart.html?items=${JSON.stringify(CART)}`
+    document.querySelector('#cart_display').href = url
     cart_display
     // alert(url)
   }
@@ -92,7 +106,7 @@
         break
       }
     }
-    
+
     desc = '';
     product.details.forEach(d => {
       for (x in d) {
@@ -122,6 +136,10 @@
   // viewProduct('P004')
 
   document.querySelector('#cart_display').innerHTML = CART.length
+  function clear_cart() {
+    localStorage.setItem('cart_items', JSON.stringify([]))
+    CART = [];
+  }
 </script>
 
 </html>
