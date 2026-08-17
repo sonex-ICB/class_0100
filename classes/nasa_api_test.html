@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="container1" class="container row mx-auto">
+    <div>
+      <form action="">
+        <input type="date">
+      </form>
+    </div>
+    <div class="col-12 col-md-10 col-lg-8 my-5" id="display">
+      <div class="text-center">
+        <div class="spinner-border "></div>
+        Please wait . . .
+      </div>
+      <!-- <div class="card shadow border">
+          <div class="p-3">
+            <div class="fw-bold"> Title </div>
+            <div class="badge  bg-warning-subtle text-dark"> 12/12/2020</div>
+            <div class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, nisi quis nobis mollitia repellendus corrupti similique cumque autem voluptatibus veniam.</div>
+            <div class=""> <img src="" alt=""> </div>
+          </div>
+        </div> -->
+    </div>
+  </div>
+</body>
+<script>
+  const container = document.querySelector('#container1');
+  function loadData() {
+    const API_KEY = 'DEMO_KEY'
+   const date = '2026-04-01'
+    const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${data}`
+    fetch(url)
+      .then(r => r.json())
+      .then(r => {
+        const data = r
+        let template = `<div class="card shadow border">
+          <div class="p-3">
+            <div class="fw-bold"> ${data.title} </div>
+            <div class="badge  bg-warning-subtle text-dark"> ${data.date}</div>
+            <div class="small">${data.explanation}</div>
+            <div class=""> <img src="${data.hdurl}" alt="" width='80%' class='d-block mx-auto'> </div>
+          </div>
+        </div>`
+        document.querySelector('#display').innerHTML = template
+      })
+      .catch(e => {
+        Swal.fire({
+          'icon': "errro",
+          title: "Error",
+          text: "Sorry unable to load data"
+        })
+      })
+
+  }
+  loadData()
+
+</script>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
