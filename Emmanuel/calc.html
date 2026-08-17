@@ -5,93 +5,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
-        body{
+        body {
             background: #1b1b1bfc;
             color: white;
         }
-        button{
+
+        button {
             padding: 25px;
             margin: 10px;
-            border: 0;
+            border: .2px solid #80808034;
             background-color: rgb(32, 32, 32);
             color: white;
             border-radius: 8px;
-        block;
+            font-weight: 700;
+            font-size: 22px;
+            width: 85px;
+            box-shadow: 0 0 5px 2px #000 inset;
         }
-        input{
-            width: 90%;
+
+        input {
+            width: 100%;
             padding: 10px;
-            margin: 10px;
-            max-width: 400px;
-            margin: 50px auto;
+            margin: 10px auto;
             border-radius: 8px;
-        } 
-        .container{
+        }
+
+        .calc_container {
             background: #0000007b;
-            width: fit-content;
-            position: fixed;
-            left: 50%;
             border-radius: 8px;
+            margin: 10px auto;
             box-shadow: 0 0 5px .5px rgba(30, 30, 30, 0.217);
+            width: fit-content;
+        }
+        .show{
+            position: fixed;
+            left: 0;
+            height: 100vh;
+            overflow: auto;
+            width: 400px;
         }
     </style>
 </head>
 <!-- you are using eval in this code -->
+
 <body>
     <div class="show"></div>
-    <section class="container mx-3 p-4 bg-black ">
+    <section class="calc_container p-4">
         <div class="calc">
             <input type="text" id="first_number">
         </div>
         <div class="nums p-4">
 
-            <button id= 'num' >7</button>
-            <button id= 'num'>8</button>
-            <button id= 'num' >9</button>
-            <button class= 'operator'>+</button>
-        <div> 
-            <button">4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-        </div>
+            <button onclick="create_exp(7)" id='num'>7</button>
+            <button onclick="create_exp(8)" id='num'>8</button>
+            <button onclick="create_exp(9)" id='num'>9</button>
+            <button onclick="create_exp('+')" class='operator'>+</button>
+            <div>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>-</button>
+            </div>
 
-        <div>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>×</button>
-        </div>
+            <div>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>×</button>
+            </div>
 
-        <div>
-            <button>0</button>
-            <button>.</button>
-            <button>=</button>
-            <button>÷</button>
-        </div>
+            <div>
+                <button>0</button>
+                <button>00</button>
+                <button>.</button>
+                <button type="button" onclick="solve()">=</button>
+            </div>
+            <div>
+                <button type="button" style="width: fit-content;" onclick="clear_all()">CLEAR</button>
+                <button onclick="back_space()">&leftleftarrows;</button>
+                <button>.</button>
+                <button type="button" onclick="solve()">=</button>
+            </div>
 
         </div>
     </section>
 </body>
 <script>
     const section = document.querySelector('.nums')
-    const input = document.querySelector('#first_number')
+    // const input = document.querySelector('#first_number')
 
-    section.addEventListener('click', (e)=> {
-        if (e.target.tagName !== 'BUTTON') return ''
+    // section.addEventListener('click', (e)=> {
+    //     if (e.target.tagName !== 'BUTTON') return ''
 
-        let value = e.target.textContent
+    //     let value = e.target.textContent
 
-        if (value === '='){
-            input.value = eval(input.value)
-        }else{
-            input.value += value
-        }
-        const shown = document.querySelector('.show')
-        shown.innerHTML = input.value
-    })
-   
+    //     if (value === '='){
+    //         input.value = eval(input.value)
+    //     }else{
+    //         input.value += value
+    //     }
+    //     const shown = document.querySelector('.show')
+    //     shown.innerHTML +=  `<br> ${input.value}`
+    // })
+
+    const shown = document.querySelector('.show')
+
+    function solve() {
+        let exp = document.querySelector('#first_number');
+        shown.innerHTML += `<p> ${exp.value} = ${eval(exp.value)}</p>`
+        exp.value = eval(exp.value)
+    }
+    function back_space(){
+       let exp = document.querySelector('#first_number');
+        exp.value = exp.value.slice(0,-1)
+    }
+    function clear_all() {
+        document.querySelector('#first_number').value = '';
+    }
+    function create_exp(x) {
+        document.querySelector('#first_number').value += x;
+    }
+
+
+
 </script>
+
 </html>
