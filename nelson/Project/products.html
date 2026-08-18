@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="d-flex align-items-center justify-content-between p-2 shadow">
+        <h3>E-market</h3>
+        <div class="badge bg-dark">0</div>
+    </header>
+    <div class="container mx-auto row" id="products_container"> 
+       <!-- <div class="col-sm col-md-6 col-lg-4 my-3">
+            <div class="card shadow overflow-hidden border">
+                <img src="shoe.jpg" width="100%" alt="">
+                <div class="p-2">
+                    <div class="fw">Running Shoes</div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <div class="fw-bold">N20,000</div>
+                    </div>
+                </div>
+            </div>
+        </div> <div class="col-sm col-md-6 col-lg-4 my-3">
+            <div class="card shadow overflow-hidden border">
+                <img src="shoe.jpg" width="100%" alt="">
+                <div class="p-2">
+                    <div class="fw">Running Shoes</div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <div class="fw-bold">N20,000</div>
+                    </div>
+                </div>
+            </div>
+        </div> <div class="col-sm col-md-6 col-lg-4 my-3">
+            <div class="card shadow overflow-hidden border">
+                <img src="shoe.jpg" width="100%" alt="">
+                <div class="p-2">
+                    <div class="fw">Running Shoes</div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <div class="fw-bold">N20,000</div>
+                    </div>
+                </div>
+            </div>
+        </div> <div class="col-sm col-md-6 col-lg-4 my-3">
+            <div class="card shadow overflow-hidden border">
+                <img src="shoe.jpg" width="100%" alt="">
+                <div class="p-2">
+                    <div class="fw">Running Shoes</div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <div class="fw-bold">N20,000</div>
+                    </div>
+                </div>
+            </div>
+        </div> <div class="col-sm col-md-6 col-lg-4 my-3">
+            <div class="card shadow overflow-hidden border">
+                <img src="shoe.jpg" width="100%" alt="">
+                <div class="p-2">
+                    <div class="fw">Running Shoes</div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <div class="fw-bold">N20,000</div>
+                    </div>
+                </div>
+            </div>
+        </div> <div class="col-sm col-md-6 col-lg-4 my-3">
+            <div class="card shadow overflow-hidden border">
+                <img src="shoe.jpg" width="100%" alt="">
+                <div class="p-2">
+                    <div class="fw">Running Shoes</div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <div class="fw-bold">N20,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div>
+</body>
+<script>
+    let CART = [];
+  const products = [
+    {
+      "name": "Wireless Headphones",
+      "id": "P001",
+      "pic": "https://picsum.photos/300/302",
+      "price": 120.00,
+      "description": "Noise-cancelling over-ear headphones with Bluetooth connectivity.",
+      "details": [
+        { "Color": "Black" },
+        { "Battery Life": "30 hours" },
+        { "Connectivity": "Bluetooth 5.0" }
+      ],
+      "qty": 20
+    },
+    {
+      "name": "Smartwatch Pro",
+      "id": "P002",
+      "pic": "https://picsum.photos/301/301",
+      "price": 250.00,
+      "description": "Advanced smartwatch with fitness tracking and heart rate monitor.",
+      "details": [
+        { "Color": "Silver" },
+        { "Display": "AMOLED" },
+        { "Water Resistance": "5 ATM" }
+      ],
+      "qty": 18
+    },
+    {
+      "name": "Gaming Laptop",
+      "id": "P003",
+      "pic": "https://picsum.photos/300/301",
+      "price": 1500.00,
+      "description": "High-performance laptop designed for gaming and heavy workloads.",
+      "details": [
+        { "Processor": "Intel i7" },
+        { "RAM": "16 GB" },
+        { "Graphics": "NVIDIA RTX 3060" }
+      ],
+      "qty": 25
+    },
+    {
+      "name": "4K Smart TV",
+      "id": "P004",
+      "pic": "https://picsum.photos/301/300",
+      "price": 800.00,
+      "description": "Ultra HD smart television with streaming apps built-in.",
+      "details": [
+        { "Screen Size": "55 inches" },
+        { "Resolution": "3840 x 2160" },
+        { "OS": "Android TV" }
+      ],
+      "qty": 30
+    },
+    {
+      "name": "Bluetooth Speaker",
+      "id": "P005",
+      "pic": "https://picsum.photos/300/300",
+      "price": 75.00,
+      "description": "Portable speaker with deep bass and waterproof design.",
+      "details": [
+        { "Color": "Blue" },
+        { "Battery Life": "12 hours" },
+        { "Waterproof": "IPX7" }
+      ],
+      "qty": 22
+    }
+  ]
+
+  let products_container = document.querySelector('#products_container');
+
+  products.forEach(p => {
+    is_available = p.qty > 0
+    if (is_available) {
+      products_container.innerHTML += (`<div class="col-sm col-md-6 col-lg-4 my-3 ">
+      <div class="card shadow overflow-hidden border">
+        <img src="${p.pic}" width="100%" alt="">
+        <div class="p-2">
+          <div class="fw"> ${p.name} </div>
+          <div class="d-flex justify-content-between">
+            <div>
+              <button class="btn btn-primary btn-sm" onclick='add_to_cart("${p.id}")'> Add Cart</button>
+              <button class="btn btn-primary btn-sm" onclick='viewProduct("${p.id}")'> View </button>
+
+            </div>
+            <div class="fw-bold "> N${p.price}</div>
+          </div>
+        </div>
+      </div>
+    </div>`)
+    }
+  })
+
+  function add_to_cart(id) {
+    if (!CART.includes(id)) {
+      CART.push(id)
+      document.querySelector('#cart_display').innerHTML = CART.length
+    }
+  }
+
+  function viewProduct(id) {
+    product = ''
+    for (i = 0; i < products.length; i++) {
+      if (products[i].id == id) {
+        product = products[i]
+        break
+      }
+    }
+    /*
+     "details": [
+        { "Color": "Silver" },
+        { "Display": "AMOLED" },
+        { "Water Resistance": "5 ATM" }
+      ],
+
+    */
+    desc = '';
+    product.details.forEach(d => {
+      for (x in d) {
+        desc += `<li>${x} : ${d[x]}</li>`
+      }
+    })
+    let UI = `
+     <div class="container p-0">
+    <div class="container">
+        <div class="p-4">
+          <img src="" width="50%" class="mx-auto" alt="">
+            <p>${product.description}</p>
+            <ul class="list-unstyled">
+            ${desc}
+            </ul>
+        </div>
+    </div>
+  </div>
+    `
+
+    Swal.fire({
+      title: product.name,
+      html: UI,
+    });
+  }
+
+  // viewProduct('P004')
+</script>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>>

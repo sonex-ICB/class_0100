@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header class="d-flex align-items-center justify-content-between p-2 shadow">
+    <h3>E-market</h3>
+    <a href="cart.html" class="badge bg-dark" id="cart_display">0</a>
+  </header>
+  <div class="container mx-auto row " id="products_container">
+    <!-- <div class="col-sm col-md-6 col-lg-4 my-3">
+      <div class="card shadow overflow-hidden border">
+        <img src="https://picsum.photos/300/300" width="100%" alt="">
+        <div class="p-2">
+          <div class="fw"> Name </div>
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-primary btn-sm"> Add Cart</button>
+            <div class="fw-bold "> N00</div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+  <div class="container">
+    <div class="fw-bold">Total : <span id="total"></span> </div>
+    <button class="btn btn-danger" onclick="clear_cart()"> Clear Cart </button>
+  </div>
+
+</body>
+<script>
+  let total = 0;
+  let previous_items = localStorage.getItem('cart_items')
+  let CART = previous_items ? JSON.parse(previous_items) : [];
+  let products_container = document.querySelector('#products_container');
+  function load_products() {
+    fetch('.json')
+      .then(p => p.json())
+      .then(p => {
+        products = [];
+          if (CART) {
+        p.forEach(p => {
+          CART.forEach(c => {
+            if (c == p.id) {
+              products.push(p)
+            }
+          })
+        })
+      
+          products.forEach(p => {
+            total += p.price;
+            products_container.innerHTML += (`<div class="col-12 col-md-6 col-lg-4 my-3 mx-auto ">
+                                          <div class="card shadow overflow-hidden border">
+                                            <div class="p-2">
+                                              <div class="fw"> ${p.name} </div>
+                                              <div class="d-flex justify-content-between">
+                                                <div>
+
+                                                </div>
+                                                <div class="fw-bold "> N${p.price}</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div></div>`)
+          })
+        }else{
+                    products_container.innerHTML = 'No items please return to <a href="products.html"> home </a>'
+          return
+        }
+          document.querySelector('#total').innerHTML = ` N${total}`
+        })
+      .catch(e => {
+        document.writeln(e)
+      })
+  }
+
+  load_products()
+  function add_to_cart(id) {
+    if (!CART.includes(id)) {
+      CART.push(id)
+      localStorage.setItem('cart_items', JSON.stringify(CART))
+      document.querySelector('#cart_display').innerHTML = CART.length
+    }
+    url = `cart.html?items=${JSON.stringify(CART)}`
+    document.querySelector('#cart_display').href = url
+    cart_display
+    // alert(url)
+  }
+
+  function viewProduct(id) {
+    product = ''
+    for (i = 0; i < products.length; i++) {
+      if (products[i].id == id) {
+        product = products[i]
+        break
+      }
+    }
+
+    desc = '';
+    product.details.forEach(d => {
+      for (x in d) {
+        desc += `<li>${x} : ${d[x]}</li>`
+      }
+    })
+    let UI = `
+     <div class="container p-0">
+    <div class="container">
+        <div class="p-4">
+          <img src="" width="50%" class="mx-auto" alt="">
+            <p>${product.description}</p>
+            <ul class="list-unstyled">
+            ${desc}
+            </ul>
+        </div>
+    </div>
+  </div>
+    `
+
+    Swal.fire({
+      title: product.name,
+      html: UI,
+    });
+  }
+
+  // viewProduct('P004')
+
+  document.querySelector('#cart_display').innerHTML = CART.length
+  function clear_cart() {
+    localStorage.setItem('cart_items', JSON.stringify([]))
+    CART = [];
+  }
+</script>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
